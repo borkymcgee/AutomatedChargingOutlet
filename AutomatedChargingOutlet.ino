@@ -9,8 +9,7 @@
 #define BUTTON_PIN 0
 
 //ms to snooze the relay when instructed
-#define SNOOZE_DELAY 5000
-
+#define SNOOZE_DELAY 1800000
 #define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 
 static NimBLEUUID dataUuid(SERVICE_UUID);
@@ -18,7 +17,7 @@ static NimBLEAdvertising *pAdvertising = NimBLEDevice::getAdvertising();
 
 int my_gap_event_handler(ble_gap_event* event, void* param){
   Serial.println((int)event);
-  //snoozeCharging();
+  snoozeCharging();
   return 0;
 }
 
